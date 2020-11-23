@@ -1,23 +1,33 @@
 class MaxIntSet
   def initialize(max)
+    @store = Array.new(max) { false }
   end
 
   def insert(num)
+    is_valid?(num)
+    # first check if num is already in set, if it is not insert. If it is then remove it and insert new num.
   end
 
   def remove(num)
+    is_valid?(num)
+    # first search for num then remove num. 
   end
-
-  def include?(num)
+  #[true, false, true, true]  
+  #[0   ,  1   ,  2  , 3   ]
+  def include?(num) #include?(0)
+    is_valid?(num)
+    @store[num] == true 
+    # asks if stor includes the num.
   end
 
   private
 
   def is_valid?(num)
+    raise "out of bounds" if num > max 
   end
 
-  def validate!(num)
-  end
+  # def validate!(num)
+  # end
 end
 
 
